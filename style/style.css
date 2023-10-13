@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    container-sizing: border-container;
+}
+
+@font-face {
+    font-family: f1titulos;
+    src: url(../assets/fonts/f1clasico.ttf);
+}
+
+@font-face {
+    font-family: f1textos;
+    src: url(../assets/fonts/f1texto.ttf);
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "article"
+    "footer";
+    width: 100vw;
+    justify-content: center;
+}
+
+/*.container-body {
+    display: grid;
+    justify-content: center;
+    width: 70vw;
+}*/
+
+header {
+    display: grid;
+    grid-template-areas:
+    "container-logotipo" "container-titulos" "container-boton";
+    grid-template-columns: auto auto auto;
+    background-color: #74ACDF;
+    width: 70vw;
+    height: auto;
+}
+
+.container-logotipo {
+    display: grid;
+    grid-area: "container-logotipo";
+    width: 20vw;
+}
+.container-titulos {
+    display: grid;
+    grid-area: "container-titulos";
+    width: 40vw;
+    text-align: center;
+    align-items: center;
+    font-family: "f1titulos";
+    font-size: 14px;
+}
+
+.container-boton {
+    display: grid;
+    grid-area: "container-boton";
+    width: 10vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-modo-pantalla {
+    width: 10vw;
+    height: 4vw;
+}
+
+article {
+    display: grid;
+    grid-template-areas:
+    "container-imagenes"
+    "container-textos";
+    width: 70vw;
+    height: auto;
+}
+
+.container-imagenes {
+    display: grid;
+    grid-area: "container-imagenes";
+    background-color: blue;
+    width: 70vw;
+    height: 20vw;
+}
+
+.container-textos {
+    display: grid;
+    grid-area: "container-textos";
+    background-color: yellow;
+    width: 70vw;
+    height: auto;
+}
+
+footer {
+    display: grid;
+    background-color: #EE0000;
+    width: 70vw;
+    height: 5vw;
+}

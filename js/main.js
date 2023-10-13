@@ -1,16 +1,16 @@
-    // CALCULO PROMEDIO - HACER FUNCION
-    function finalPromedio(q1, q2, q3) {
-        let final = (q1 + q2 + q3) / 3; // NO DEFINIDA
-        console.log('q1:' + q1);
-        console.log('q2:' + q2);
-        console.log('q3:' + q3);
-        console.log('final:' + final)
-        return final; // PROMEDIAR CON MATH
-    }
+// CALCULO PROMEDIO - HACER FUNCION
+function finalPromedio(q1, q2, q3) {
+    let final = (q1 + q2 + q3) / 3;
+    console.log('q1:' + q1);
+    console.log('q2:' + q2);
+    console.log('q3:' + q3);
+    console.log('final:' + final)
+    return final;
+}
 
-    var q1 = 0;
-    var q2 = 0;
-    var q3 = 0;
+let q1 = 0;
+let q2 = 0;
+let q3 = 0;
 
 const Sainz = {
     nombre: "Carlos",
@@ -52,7 +52,7 @@ alert("Para que piloto estará trabajando?");
 console.log("Para que piloto estará trabajando?");
 
 let piloto1 = prompt("Elija la Opcion que desea. Sainz para Carlos Sainz o Verstappen para Max Verstappen");
-console.log (pilotos.find ((piloto) => piloto.apellido === piloto1))
+console.log(pilotos.find((piloto) => piloto.apellido === piloto1))
 if (piloto1 == Sainz.apellido) { //CAMINO CARLOS SAINZ
     let piloto1 = "Carlos Sainz";
     let piloto2 = "Max Verstappen";
@@ -163,7 +163,7 @@ if (piloto1 == Sainz.apellido) { //CAMINO CARLOS SAINZ
         console.log("Sabes que estar trabajando para " + Sainz.nombreEscuderia + " es una gran responsabilidad." + Sainz.nombre + " se baja del auto bastante frustrado, lo deja saber por las expresiones en su cara. " + Sainz.directorEscuderiaNombre + " " + Sainz.directorEscuderiaApellido + " sigue sentado en su silla frente a su monitor, te dirige una mirada pensativa. Te hace dudar de si estas a la altura de este desafío.")
     }
 } else { //CAMINO MAX Verstappen
-    console.log (pilotos.find ((piloto) => piloto.apellido === piloto1))
+    console.log(pilotos.find((piloto) => piloto.apellido === piloto1))
     let Piloto1 = "Max Verstappen";
     let Piloto2 = "Carlos Sainz";
     console.log(Verstappen.nombre + " " + Verstappen.apellido)
