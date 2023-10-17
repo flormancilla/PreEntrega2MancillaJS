@@ -78,7 +78,6 @@ function activarDarkMode() {
 const usuarioNombreInput = document.querySelector(".input-nombre");
 const usuarioNombre = usuarioNombreInput.value;
 const textosElement = document.querySelector(".textos");
-let usuarioApellido = "";
 let piloto1 = " ";
 let piloto2 = " ";
 
@@ -126,7 +125,7 @@ function mostrarPilotoOptions(usuarioNombre, usuarioApellido) {
         <button class="boton-verstappen">Max Verstappen</button>
     `;
 
-    const botonSainz = document.querySelector(".boton-sainz"); //CARLOS SAINZ
+    const botonSainz = document.querySelector(".boton-sainz");
     const botonVerstappen = document.querySelector(".boton-verstappen");
 
     botonSainz.addEventListener("click", function () {
@@ -144,7 +143,7 @@ function mostrarSainzScenario(usuarioNombre, usuarioApellido) {
     let piloto2 = "Max Verstappen";
     textosElement.innerHTML = `<p>Bienvenido ${usuarioNombre} ${usuarioApellido} dificil tu primer gran día. Qualy en Suzuka con posibilidades de lluvia. Que desafio.</p>
                         <p>Lo primero que debes saber es que trabajar con ${piloto1} es algo muy importante.</p>
-                        <button class="boton-siguiente1">Siguiente</button>`; 
+                        <button class="boton-siguiente1">Siguiente</button>`; //esta bien
     let botonSiguiente1 = document.querySelector(".boton-siguiente1")
     botonSiguiente1.addEventListener("click", function () {
         event.preventDefault();
@@ -168,13 +167,13 @@ function mostrarSainzScenario(usuarioNombre, usuarioApellido) {
     })
 }
 
-function mostrarVerstappenScenario(usuarioNombre, usuarioApellido) { //MAX VERSTAPPEN
+function mostrarVerstappenScenario(usuarioNombre, usuarioApellido) {
     event.preventDefault();
     let piloto1 = "Max verstappen";
     let piloto2 = "Carlos Sainz";
     textosElement.innerHTML = `<p>Bienvenido ${usuarioNombre} ${usuarioApellido} dificil tu primer gran día. Qualy en Suzuka con posibilidades de lluvia. Que desafio.</p>
                         <p>Lo primero que debes saber es que trabajar con ${piloto1} es algo muy importante.</p>
-                        <button class="boton-siguiente1">Siguiente</button>`;
+                        <button class="boton-siguiente1">Siguiente</button>`; //esta bien
     let botonSiguiente1 = document.querySelector(".boton-siguiente1")
     botonSiguiente1.addEventListener("click", function () {
         event.preventDefault();
@@ -207,7 +206,7 @@ function funcionOpcion1(event) {
         <p>Buen trabajo, ${usuarioNombre} Sigamos así. Te dice ${Sainz.directorEscuderiaNombre} ${Sainz.directorEscuderiaApellido}</p>
         <button class="boton-siguiente3">Siguiente</button>`
         ;
-    q1 = 2;
+
     const botonSiguiente3 = document.querySelector(".boton-siguiente3");
 
     botonSiguiente3.addEventListener("click", function () {
@@ -223,7 +222,6 @@ function funcionOpcion2(event) {
         `<p>A ${piloto1} se le ha complicado conseguir espacio para hacer una vuelta rápida y limpia. Consigue un P4 que lo coloca cómodamente en la Q2. ${Sainz.nombre} se sintió un poco nervioso. Durante estos minutos sentiste la mirada de ${Sainz.directorEscuderiaNombre} en tu espalda varias veces.</p>
         <button class="boton-siguiente3">Siguiente</button>`
         ;
-    q1 = 4;
     const botonSiguiente3 = document.querySelector(".boton-siguiente3");
 
     botonSiguiente3.addEventListener("click", function () {
@@ -280,7 +278,6 @@ function neumaticosQ3(piloto1, piloto2) {
             <p>P6 para ${piloto1} y sus nervios afloran. ${Sainz.directorEscuderiaNombre} se acerca y pregunta por qué no optaste por los blandos y vuelve a su lugar, ya que aún estamos entre los 10 mejores</p>
             <button class="boton-siguiente5">Siguiente</button>
         `;
-        q2 = 6;
         const botonSiguiente5 = document.querySelector(".boton-siguiente5");
         botonSiguiente5.addEventListener("click", function () {
             funcionBotonSiguiente5();
@@ -296,7 +293,6 @@ function neumaticosQ3(piloto1, piloto2) {
             <p>${Sainz.nombre} se sintió muy cómodo con tu actuación y con el auto.</p>
             <button class="boton-siguiente5">Siguiente</button>
         `;
-        q2 = 1;
         const botonSiguiente5 = document.querySelector(".boton-siguiente5");
         botonSiguiente5.addEventListener("click", function () {
             funcionBotonSiguiente5();
@@ -354,12 +350,6 @@ function funcionBotonOpcion5() {
         <p>${Sainz.nombre} logra hacer un gran tiempo y ponerlos en un P3, suficiente para un podio decente. El garage de " ${Sainz.nombreEscuderia} está conforme. Mañana durante la carrera saldrá en segunda fila.</p>
         <button class="boton-siguiente7">Siguiente</button>
     `;
-    q3 = 3;
-    const botonSiguiente7 = document.querySelector(".boton-siguiente7");
-    botonSiguiente7.addEventListener("click", function () {
-        event.preventDefault();
-        funcionBotonSiguiente7();
-    });
 }
 
 function funcionBotonOpcion6() {
@@ -371,26 +361,7 @@ function funcionBotonOpcion6() {
         <p>Con cuidado ${Sainz.nombre} llega al pit y todos los presentes festejan. ${piloto2} no pudo superar el resultado. Mañana ${Sainz.nombreEscuderia} sale desde la primera línea.</p>
         <button class="boton-siguiente7">Siguiente</button>
     `;
-    q3 = 1;
-    let botonSiguiente7 = document.querySelector(".boton-siguiente7");
-    botonSiguiente7.addEventListener("click", function () {
-        event.preventDefault();
-        funcionBotonSiguiente7();
-    })
 }
-//FINAL CS
-function funcionBotonSiguiente7() {
-    event.preventDefault();
-    const textosElement = document.querySelector(".textos");
-    const final = finalPromedio(q1, q2, q3);
-
-    if (final >= 3) { // BUENO
-        textosElement.innerHTML = `<p>${Sainz.directorEscuderiaNombre} ${Sainz.directorEscuderiaApellido} se te acerca con una sonrisa y abraza alegremente junto a ${Sainz.nombre}. Sabe que mañana será un día con muchas expectativas. Y lo conseguiste todo en un solo día, ${usuarioNombre} ${usuarioApellido}.</p>`;
-    } else { // MALO
-        textosElement.innerHTML = `<p>Sabes que estar trabajando para ${Sainz.nombreEscuderia} es una gran responsabilidad. ${Sainz.nombre} se baja del auto bastante frustrado, lo deja saber por las expresiones en su cara. ${Sainz.directorEscuderiaNombre} ${Sainz.directorEscuderiaApellido} sigue sentado en su silla frente a su monitor, te dirige una mirada pensativa. Te hace dudar de si estas a la altura de este desafío.</p>`;
-    }
-}
-
 
 
 //-------------------------------------------FUNCIONES MAX
@@ -401,7 +372,7 @@ function funcionOpcion1MV(event) {
         <p>Buen trabajo, ${usuarioNombre} Sigamos así. Te dice ${Verstappen.directorEscuderiaNombre} ${Verstappen.directorEscuderiaApellido}</p>
         <button class="boton-siguiente3">Siguiente</button>`
         ;
-    q1 = 2;
+
     const botonSiguiente3 = document.querySelector(".boton-siguiente3");
 
     botonSiguiente3.addEventListener("click", function () {
@@ -410,14 +381,13 @@ function funcionOpcion1MV(event) {
 }
 
 function funcionOpcion2MV(event) {
-    event.preventDefault();
+    event.preventDefaultMV();
     let piloto1 = "Max Verstappen";
 
     textosElement.innerHTML =
         `<p>A ${piloto1} se le ha complicado conseguir espacio para hacer una vuelta rápida y limpia. Consigue un P4 que lo coloca cómodamente en la Q2. ${Verstappen.nombre} se sintió un poco nervioso. Durante estos minutos sentiste la mirada de ${Sainz.directorEscuderiaNombre} en tu espalda varias veces.</p>
         <button class="boton-siguiente3">Siguiente</button>`
         ;
-    q1 = 4;
     const botonSiguiente3 = document.querySelector(".boton-siguiente3");
 
     botonSiguiente3.addEventListener("click", function () {
@@ -474,7 +444,6 @@ function neumaticosQ3MV(piloto1, piloto2) {
             <p>P6 para ${piloto1} y sus nervios afloran. ${Verstappen.directorEscuderiaNombre} se acerca y pregunta por qué no optaste por los blandos y vuelve a su lugar, ya que aún estamos entre los 10 mejores</p>
             <button class="boton-siguiente5">Siguiente</button>
         `;
-        q2 = 6;
         const botonSiguiente5 = document.querySelector(".boton-siguiente5");
         botonSiguiente5.addEventListener("click", function () {
             funcionBotonSiguiente5MV();
@@ -490,7 +459,6 @@ function neumaticosQ3MV(piloto1, piloto2) {
             <p>${Verstappen.nombre} se sintió muy cómodo con tu actuación y con el auto.</p>
             <button class="boton-siguiente5">Siguiente</button>
         `;
-        q2 = 1;
         const botonSiguiente5 = document.querySelector(".boton-siguiente5");
         botonSiguiente5.addEventListener("click", function () {
             funcionBotonSiguiente5MV();
@@ -511,7 +479,7 @@ function funcionBotonSiguiente5MV() {
         <button class="boton-siguiente6">Siguiente</button>`
         ;
 
-    const botonSiguiente6 = document.querySelector(".boton-siguiente6");
+    const botonSiguiente6 = document.querySelectorMV(".boton-siguiente6");
     botonSiguiente6.addEventListener("click", function () {
         event.preventDefault();
         funcionBotonSiguiente6MV();
@@ -548,12 +516,6 @@ function funcionBotonOpcion5MV() {
         <p>${Verstappen.nombre} logra hacer un gran tiempo y ponerlos en un P3, suficiente para un podio decente. El garage de " ${Verstappen.nombreEscuderia} está conforme. Mañana durante la carrera saldrá en segunda fila.</p>
         <button class="boton-siguiente7">Siguiente</button>
     `;
-    q3 = 3;
-    const botonSiguiente7 = document.querySelector(".boton-siguiente7");
-    botonSiguiente7.addEventListener("click", function () {
-        event.preventDefault();
-        funcionBotonSiguiente7MV();
-    });
 }
 
 function funcionBotonOpcion6MV() {
@@ -565,23 +527,4 @@ function funcionBotonOpcion6MV() {
         <p>Con cuidado ${Verstappen.nombre} llega al pit y todos los presentes festejan. ${piloto2} no pudo superar el resultado. Mañana ${Verstappen.nombreEscuderia} sale desde la primera línea.</p>
         <button class="boton-siguiente7">Siguiente</button>
     `;
-    q3 = 1;
-    const botonSiguiente7 = document.querySelector(".boton-siguiente7")
-    botonSiguiente7.addEventListener("click", function () {
-        event.preventDefault();
-        funcionBotonSiguiente7MV();
-    })
-}
-
-//FINAL MAX
-function funcionBotonSiguiente7MV() {
-    event.preventDefault();
-    const textosElement = document.querySelector(".textos");
-    const final = finalPromedio(q1, q2, q3);
-
-    if (final >= 3) { // BUENO
-        textosElement.innerHTML = `<p>${Verstappen.directorEscuderiaNombre} ${Verstappen.directorEscuderiaApellido} se te acerca con una sonrisa y abraza alegremente junto a ${Verstappen.nombre}. Sabe que mañana será un día con muchas expectativas. Y lo conseguiste todo en un solo día, ${Verstappen} ${usuarioApellido}.</p>`;
-    } else { // MALO
-        textosElement.innerHTML = `<p>Sabes que estar trabajando para ${Verstappen.nombreEscuderia} es una gran responsabilidad. ${Verstappen.nombre} se baja del auto bastante frustrado, lo deja saber por las expresiones en su cara. ${Verstappen.directorEscuderiaNombre} ${Verstappen.directorEscuderiaApellido} sigue sentado en su silla frente a su monitor, te dirige una mirada pensativa. Te hace dudar de si estas a la altura de este desafío.</p>`;
-    }
 }

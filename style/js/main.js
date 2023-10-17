@@ -70,7 +70,7 @@ if (piloto1 == Sainz.apellido) { //CAMINO CARLOS SAINZ
     alert("Te pones los auriculares y lo saludas. Faltan 3 min para que los primeros 18 minutos de la Q3 empiecen.");
     console.log("Te pones los auriculares y lo saludas. Faltan 3 min para que los primeros 18 minutos de la Q3 empiecen.");
     alert("Debes decidir:");
-    alert("A - Sacar a " + piloto1 + ", primero, con pista y aire limpio pero con el asfalto menos engomado.");
+    alert("A - ");
     alert("B - Sacar a " + piloto1 + " despues del minuto 5, con más trafico pero con mayor adherencia.");
 
     let camino1 = prompt("Ingrese A - Para sacar al piloto primero. B - Para sacar al piloto despues del minuto 5.");
